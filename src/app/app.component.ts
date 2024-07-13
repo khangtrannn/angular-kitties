@@ -7,8 +7,13 @@ import { HeaderComponent } from './shared/header/header.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   template: `
-    <app-header />
-    <router-outlet />
+    <div class="max-w-[1440px]">
+      <app-header />
+
+      <div class="pt-6 px-6">
+        <router-outlet />
+      </div>
+    </div>
   `,
 })
 export class AppComponent {}

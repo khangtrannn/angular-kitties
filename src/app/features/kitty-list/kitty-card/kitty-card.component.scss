@@ -1,0 +1,44 @@
+.card-wrapper {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  overflow: hidden;
+
+  .card-media {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.54);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0em;
+      margin-bottom: 0.25rem;
+    }
+
+    .temperament {
+      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999999px;
+      width: fit-content;
+      padding: 2px 12px;
+      font-weight: 700;
+    }
+  }
+
+  .card-actions {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px;
+  }
+}
