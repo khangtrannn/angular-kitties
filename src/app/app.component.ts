@@ -10,7 +10,7 @@ import { HeaderComponent } from './shared/ui/header/header.component';
     <div class="max-w-[1440px]">
       <app-header />
 
-      <div class="pt-6 px-6">
+      <div class="py-6 px-6">
         <router-outlet />
       </div>
     </div>

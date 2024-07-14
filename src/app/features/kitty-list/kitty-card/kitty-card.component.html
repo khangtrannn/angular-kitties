@@ -6,24 +6,28 @@
       [alt]="breed().name"
     />
 
-    <span [class]="'absolute text-xl top-2 left-4 ' + country()"></span>
+    <span [class]="'absolute text-2xl top-4 left-6 ' + country()"></span>
 
     <svg-icon
       src="icons/heart.svg"
       [svgStyle]="{
         position: 'absolute',
-        top: '0.875rem',
-        right: '1rem',
+        top: '1rem',
+        right: '1.5rem',
         fill: 'white',
         'width.px': 26,
       }"
     />
 
     <div class="card-media">
+      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+        <path></path>
+      </svg>
+
       <span class="name">{{ breed().name }}</span>
       <div class="flex flex-wrap gap-1">
         @for (temperament of temperaments().slice(0, 4); track temperament) {
-        <span class="temperament">{{ temperament }}</span>
+          <span class="temperament">{{ temperament }}</span>
         }
       </div>
     </div>
