@@ -1,9 +1,19 @@
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
+
+@let isPriority = kitty().width > 2000;
+
 <div class="card-wrapper">
-  <div class="relative">
+  <div class="relative h-[320px] w-full">
     <img
-      [src]="kitty().url"
-      class="block bg-cover bg-no-repeat bg-[center_center] w-full h-[300px] object-cover"
+      [ngSrc]="kitty().url"
+      class="block bg-cover bg-no-repeat bg-[center_center] object-cover"
       [alt]="breed().name"
+      [loading]="'lazy'"
+      fill
     />
 
     <span [class]="'absolute text-2xl top-4 left-6 ' + country()"></span>
@@ -26,7 +36,7 @@
 
       <span class="name">{{ breed().name }}</span>
       <div class="flex flex-wrap gap-1">
-        @for (temperament of temperaments().slice(0, 4); track temperament) {
+        @for (temperament of temperaments(); track temperament) {
           <span class="temperament">{{ temperament }}</span>
         }
       </div>

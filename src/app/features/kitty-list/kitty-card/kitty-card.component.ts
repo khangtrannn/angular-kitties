@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { Kitty } from '../../../shared/models/kitty';
@@ -5,7 +6,7 @@ import { Kitty } from '../../../shared/models/kitty';
 @Component({
   selector: 'app-kitty-card',
   standalone: true,
-  imports: [SvgIconComponent],
+  imports: [SvgIconComponent, NgOptimizedImage],
   templateUrl: './kitty-card.component.html',
   styleUrl: './kitty-card.component.scss',
 })

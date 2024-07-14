@@ -14,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withViewTransitions()),
     provideAngularSvgIcon(),
     provideHttpClient(),
+    // provideCloudinaryLoader('https://cdn2.thecatapi.com/'),
   ],
 };

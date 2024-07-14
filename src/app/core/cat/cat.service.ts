@@ -14,7 +14,7 @@ export class CatService {
   getRandomCats() {
     return lastValueFrom(
       this.#http.get<Kitty[]>(
-        `${CAT_API_URL}/images/search?limit=12&has_breeds=1`,
+        `${CAT_API_URL}/images/search?limit=18&has_breeds=1&size=med`,
         {
           headers: {
             'content-type': 'application/json',
