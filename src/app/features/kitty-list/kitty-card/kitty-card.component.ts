@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { SvgIconComponent } from 'angular-svg-icon';
+import { Kitty } from '../../../shared/models/kitty';
 
 @Component({
   selector: 'app-kitty-card',
@@ -8,4 +9,9 @@ import { SvgIconComponent } from 'angular-svg-icon';
   templateUrl: './kitty-card.component.html',
   styleUrl: './kitty-card.component.scss',
 })
-export class KittyCardComponent {}
+export class KittyCardComponent {
+  kitty = input.required<Kitty>();
+  breed = computed(() => this.kitty().breeds[0]);
+  temperaments = computed(() => this.breed().temperament.split(','));
+  country = computed(() => `fi fi-${this.breed().country_code.toLowerCase()}`);
+}

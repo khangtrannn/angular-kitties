@@ -43,7 +43,7 @@ interface Breed {
   reference_image_id: string;
 }
 
-export interface CatResponse {
+export interface Kitty {
   breeds: Breed[];
   id: string;
   url: string;

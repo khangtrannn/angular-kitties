@@ -1,12 +1,12 @@
 <div class="card-wrapper">
   <div class="relative">
     <img
-      src="https://cdn2.thecatapi.com/images/uvt2Psd9O.jpg"
+      [src]="kitty().url"
       class="block bg-cover bg-no-repeat bg-[center_center] w-full h-[300px] object-cover"
-      alt="Kitty"
+      [alt]="breed().name"
     />
 
-    <span class="absolute text-2xl top-2 left-4 fi fi-gb"></span>
+    <span [class]="'absolute text-xl top-2 left-4 ' + country()"></span>
 
     <svg-icon
       src="icons/heart.svg"
@@ -20,11 +20,11 @@
     />
 
     <div class="card-media">
-      <span class="name">American Wirehair</span>
-      <div class="flex gap-2">
-        <span class="temperament">Affectionate</span>
-        <span class="temperament">Sweet</span>
-        <span class="temperament">Active</span>
+      <span class="name">{{ breed().name }}</span>
+      <div class="flex flex-wrap gap-1">
+        @for (temperament of temperaments().slice(0, 4); track temperament) {
+        <span class="temperament">{{ temperament }}</span>
+        }
       </div>
     </div>
   </div>

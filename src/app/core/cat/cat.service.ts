@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { CatResponse } from './cat.model';
+import { Kitty } from '../../shared/models/kitty';
 
 const CAT_API_URL = 'https://api.thecatapi.com/v1';
 
@@ -13,9 +13,15 @@ export class CatService {
 
   getRandomCats() {
     return lastValueFrom(
-      this.#http.get<CatResponse[]>(
-        `${CAT_API_URL}/images/search?limit=12&has_breeds=1`
-      )
+      this.#http.get<Kitty[]>(
+        `${CAT_API_URL}/images/search?limit=12&has_breeds=1`,
+        {
+          headers: {
+            'content-type': 'application/json',
+            'x-api-key': import.meta.env['NG_APP_CAT_API_KEY'],
+          },
+        },
+      ),
     );
   }
 }

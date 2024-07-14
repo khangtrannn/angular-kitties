@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 gap-6">
-  <app-kitty-card />
-  <app-kitty-card />
-  <app-kitty-card />
+  @for (kitty of kitties(); track kitty.id) {
+  <app-kitty-card [kitty]="kitty" />
+  }
 </div>
