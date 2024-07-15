@@ -12,11 +12,13 @@ import { KittyCardComponent } from './kitty-card/kitty-card.component';
 })
 export class KittyListComponent implements OnInit {
   kitties = signal<Kitty[]>([]);
+  isLoading = signal(true);
 
   #catService = inject(CatService);
 
   async ngOnInit() {
     const kitties = await this.#catService.getRandomCats();
     this.kitties.set(kitties);
+    this.isLoading.set(false);
   }
 }

@@ -7,10 +7,10 @@ import { HeaderComponent } from './shared/ui/header/header.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   template: `
-    <div class="max-w-[1440px]">
+    <div>
       <app-header />
 
-      <div class="py-6 px-6">
+      <div class="py-6 px-6 max-w-[1440px] mx-auto">
         <router-outlet />
       </div>
     </div>

@@ -2,11 +2,12 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { Kitty } from '../../../shared/models/kitty';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-kitty-card',
   standalone: true,
-  imports: [SvgIconComponent, NgOptimizedImage],
+  imports: [SvgIconComponent, NgOptimizedImage, NgxSkeletonLoaderModule],
   templateUrl: './kitty-card.component.html',
   styleUrl: './kitty-card.component.scss',
 })
