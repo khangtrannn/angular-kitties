@@ -1,39 +1,37 @@
 @let isPriority = kitty().width > 1200;
 
-<div class="card-wrapper">
-  <div class="relative h-[320px] w-full">
-    <img
-      [ngSrc]="kitty().url"
-      class="block bg-cover bg-no-repeat bg-[center_center] object-cover"
-      [alt]="breed().name"
-      [loading]="'lazy'"
-      fill
-    />
+<div class="rounded-[30px] overflow-hidden relative shadow-md h-[320px] w-full">
+  <img
+    [ngSrc]="kitty().url"
+    class="block bg-cover bg-no-repeat bg-[center_center] object-cover"
+    [alt]="breed().name"
+    [loading]="'lazy'"
+    fill
+  />
 
-    <span [class]="'absolute text-2xl top-4 left-6 ' + country()"></span>
+  <span [class]="'absolute text-2xl top-4 left-6 ' + country()"></span>
 
-    <svg-icon
-      src="icons/heart.svg"
-      [svgStyle]="{
+  <svg-icon
+    src="icons/heart.svg"
+    [svgStyle]="{
         position: 'absolute',
         top: '1rem',
         right: '1.5rem',
         fill: 'white',
         'width.px': 26,
       }"
-    />
+  />
 
-    <div class="card-media">
-      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-        <path></path>
-      </svg>
+  <div class="card-media">
+    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+      <path></path>
+    </svg>
 
-      <span class="name">{{ breed().name }}</span>
-      <div class="flex flex-wrap gap-1">
-        @for (temperament of temperaments(); track temperament) {
-          <span class="temperament">{{ temperament }}</span>
-        }
-      </div>
+    <span class="name">{{ breed().name }}</span>
+    <div class="flex flex-wrap gap-1">
+      @for (temperament of temperaments(); track temperament) {
+      <span class="temperament">{{ temperament }}</span>
+      }
     </div>
   </div>
 </div>

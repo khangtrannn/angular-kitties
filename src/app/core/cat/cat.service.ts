@@ -14,14 +14,14 @@ export class CatService {
   getRandomCats() {
     return lastValueFrom(
       this.#http.get<Kitty[]>(
-        `${CAT_API_URL}/images/search?limit=18&has_breeds=1&size=med`,
+        `${CAT_API_URL}/images/search?limit=18&has_breeds=1&size=small`,
         {
           headers: {
             'content-type': 'application/json',
             'x-api-key': import.meta.env['NG_APP_CAT_API_KEY'],
           },
-        },
-      ),
+        }
+      )
     );
   }
 }
