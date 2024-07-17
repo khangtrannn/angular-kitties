@@ -1,11 +1,15 @@
 <div class="grid grid-cols-3 gap-6">
   @if (isLoading()) {
-    @for (i of [].constructor(12); track $index) {
-      <app-kitty-card-skeleton />
-    }
+    <ng-container *ngTemplateOutlet="loading" /> 
   } @else {
     @for (kitty of kitties(); track kitty.id) {
       <app-kitty-card [kitty]="kitty" />
     }
   }
 </div>
+
+<ng-template #loading>
+  @for (i of [].constructor(12); track $index) {
+    <app-kitty-card-skeleton />
+  }
+</ng-template>

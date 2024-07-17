@@ -50,3 +50,12 @@
   backdrop-filter: blur(4px);
   d: path("M 30 60 c 16.5 0 30 -16.5 30 -30 v 30 Z");
 }
+
+.image {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+
+  &.loaded {
+    opacity: 1;
+  }
+}

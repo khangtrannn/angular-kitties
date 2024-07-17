@@ -3,11 +3,12 @@ import { CatService } from '../../core/cat/cat.service';
 import { Kitty } from '../../shared/models/kitty';
 import { KittyCardSkeletonComponent } from './kitty-card-skeleton/kitty-card-skeleton.component';
 import { KittyCardComponent } from './kitty-card/kitty-card.component';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-kitty-list',
   standalone: true,
-  imports: [KittyCardComponent, KittyCardSkeletonComponent],
+  imports: [KittyCardComponent, KittyCardSkeletonComponent, NgTemplateOutlet],
   templateUrl: './kitty-list.component.html',
   styleUrl: './kitty-list.component.scss',
 })

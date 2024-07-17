@@ -1,5 +1,5 @@
 import { NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { Kitty } from '../../../shared/models/kitty';
 import { KittyCardSkeletonComponent } from '../kitty-card-skeleton/kitty-card-skeleton.component';
@@ -21,4 +21,6 @@ export class KittyCardComponent {
   breed = computed(() => this.kitty().breeds[0]);
   temperaments = computed(() => this.breed().temperament.split(','));
   country = computed(() => `fi fi-${this.breed().country_code.toLowerCase()}`);
+
+  isImageLoaded = signal(false);
 }

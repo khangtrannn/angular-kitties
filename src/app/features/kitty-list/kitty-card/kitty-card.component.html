@@ -2,12 +2,18 @@
 
 <div class="rounded-[30px] overflow-hidden relative shadow-md h-[320px] w-full">
   <img
+    fill
     [ngSrc]="kitty().url"
-    class="block bg-cover bg-no-repeat bg-[center_center] object-cover"
+    class="image bg-cover bg-no-repeat bg-[center_center] object-cover"
+    [class.loaded]="isImageLoaded()"
     [alt]="breed().name"
     [loading]="'lazy'"
-    fill
+    (load)="isImageLoaded.set(true)"
   />
+
+  @if (!isImageLoaded()) {
+    <div class="animate-pulse h-full bg-gray-300"></div>
+  }
 
   <span [class]="'absolute text-2xl top-4 left-6 ' + country()"></span>
 
@@ -30,7 +36,7 @@
     <span class="name">{{ breed().name }}</span>
     <div class="flex flex-wrap gap-1">
       @for (temperament of temperaments(); track temperament) {
-      <span class="temperament">{{ temperament }}</span>
+        <span class="temperament">{{ temperament }}</span>
       }
     </div>
   </div>
